@@ -6,6 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Iosevka:size=10:antialias=true:autohint=true";
+static char *font2[] = { "UbuntuMono Nerd Font:size=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
