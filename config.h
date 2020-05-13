@@ -198,8 +198,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_y,           clippaste,      	{.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      	{.i =  0} },
 
-	{ MODKEY,               XK_k,     	kscrollup,      	{.i = -1} }, //scrolls
-	{ MODKEY,               XK_j,   	kscrolldown,    	{.i = -1} },
+	{ MODKEY,               XK_k,     	kscrollup,      	{.i = 1} }, //scrolls
+	{ MODKEY,               XK_j,   	kscrolldown,    	{.i = 1} },
 	{ SUPER,                XK_Page_Up,     kscrollup,	        {.i = -1} },
 	{ SUPER,                XK_Page_Down,   kscrolldown,    	{.i = -1} },
 
