@@ -1,3 +1,4 @@
+# Maintainer: null2264 <palembani@gmail.com>
 pkgname=st-ziro-git
 _pkgname=st
 pkgver=r1129.873330b
