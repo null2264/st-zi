@@ -1,6 +1,6 @@
 pkgname=st-ziro-git
 _pkgname=st
-pkgver=0.8.3
+pkgver=r1129.873330b
 pkgrel=1
 epoch=1
 pkgdesc="ZiRO or AAP's personal build of st (simple terminal) with Xresources, transparency, etc."
@@ -17,26 +17,24 @@ provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 
 pkgver() {
-	cd "${_pkgname}"
-	printf "%s.r%s.%s" "$(awk '/^VERSION =/ {print $3}' config.mk)" \
-		"$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd st-zi
+  printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 prepare() {
-	cd $srcdir/${_pkgname}
-	# skip terminfo which conflicts with ncurses
-	sed -i '/tic /d' Makefile
+  cd st-zi
+  # skip terminfo which conflicts with ncurses
+  sed -i '/\@tic /d' Makefile
 }
 
 build() {
-	cd "${_pkgname}"
-	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+  cd st-zi
+  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
 package() {
-	cd "${_pkgname}"
-	make PREFIX=/usr DESTDIR="${pkgdir}" install
-	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-	install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-	install -Dm644 .Xdefaults "${pkgdir}/usr/share/doc/${pkgname}/Xdefaults.example"
+  cd st-zi
+  make PREFIX=/usr DESTDIR="$pkgdir" TERMINFO="$pkgdir/usr/share/terminfo" install
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README "$pkgdir/usr/share/doc/$pkgname/README"
 }
