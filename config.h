@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Nerd Font:size=10:antialias=true:autohint=true";
+static char *font = "Iosevka:size=10:antialias=true:autohint=true";
 static char *font2[] = { "UbuntuMono Nerd Font:size=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -162,6 +162,7 @@ static unsigned int defaultattr = 11;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
+		{ "font2",        STRING,  &font2[0] },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
@@ -191,6 +192,7 @@ ResourcePref resources[] = {
 		{ "borderpx",     INTEGER, &borderpx },
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
+		{ "alpha",	  FLOAT,   &alpha },
 };
 
 
