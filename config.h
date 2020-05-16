@@ -7,7 +7,8 @@
  */
 static char *font = "Iosevka:size=10:antialias=true:autohint=true";
 static char *font2[] = {
-	"UbuntuMono Nerd Font:size=10:antialias=true:autohint=true" };
+	"UbuntuMono Nerd Font:size=10:antialias=true:autohint=true" 
+	"JoyPixels:size=10:antialias=true:autohint=true"};
 static int borderpx = 2;
 
 /*
